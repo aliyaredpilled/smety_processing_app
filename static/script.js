@@ -253,9 +253,10 @@ document.addEventListener('DOMContentLoaded', () => {
             } finally {
                 // Очистка полей остается, НО НЕ ФАЙЛА
                 const finalFileInput = document.getElementById('file');
-                // if (finalFileInput) { finalFileInput.value = ''; } // КОММЕНТИРУЕМ ОЧИСТКУ ФАЙЛА
+                // Удаляем строку ниже:
+                // Строка ниже была удалена
 
-                // --- УДАЛЯЕМ РАЗБЛОКИРОВКУ КНОПКИ ЗДЕСЬ --- 
+                // --- УДАЛЯЕМ РАЗБЛОКИРОВКУ КНОПКИ ЗДЕСЬ ---
                 /*
                 const submitButtonFinally = document.getElementById('submit-button');
                 if (submitButtonFinally) submitButtonFinally.disabled = false;
