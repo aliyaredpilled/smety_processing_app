@@ -325,7 +325,10 @@ def upload_file():
 @app.route('/progress/<session_id>')
 def get_progress(session_id):
     """Возвращает текущий статус обработки для данной сессии."""
-    status = processing_status.get(session_id, {"status": "Не найдено", "processed": 0, "total": 0, "error": "Сессия не найдена или завершена."})
+    # --- ИЗМЕНЕНИЕ: Более дружелюбный начальный статус ---
+    default_status = {"status": "Инициализация...", "processed": 0, "total": 0, "error": None}
+    status = processing_status.get(session_id, default_status)
+    # ----------------------------------------------------
     # print(f"Запрос статуса для {session_id}: {status}") # Лог для отладки поллинга
     return jsonify(status)
 # ==========================================
