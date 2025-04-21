@@ -120,11 +120,22 @@ button:hover,
     background-color: #4cae4c;
 }
 
+/* Закомментируем это правило, чтобы кнопка не становилась серой */
+/*
 button:disabled {
     background-color: #cccccc;
     cursor: not-allowed;
 }
+*/
 
+/* Стиль для отображения имени файла */
+.file-name-display {
+    display: block; /* Чтобы был на новой строке */
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #6c757d; /* Серый цвет */
+    font-style: italic;
+}
 
 /* Стили для индикатора прогресса */
 #progress-container {

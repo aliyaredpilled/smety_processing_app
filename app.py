@@ -20,6 +20,12 @@ from formatting import (
 # --- Конфигурация Flask ---
 app = Flask(__name__)
 
+# <<< НАЧАЛО ИЗМЕНЕНИЙ: Настройки для отключения кэша в разработке >>>
+app.config['SEND_FILE_MAX_AGE_DEFAULT'] = 0 # Отключает кэширование статических файлов браузером
+app.config['TEMPLATES_AUTO_RELOAD'] = True # Автоматически перезагружает шаблоны при изменении
+app.config['DEBUG'] = True # Убедимся, что включен режим отладки (он тоже влияет на кэш)
+# <<< КОНЕЦ ИЗМЕНЕНИЙ >>>
+
 UPLOAD_FOLDER = 'uploads'
 RESULTS_FOLDER = 'results'
 REFERENCE_FOLDER = 'reference_files'
